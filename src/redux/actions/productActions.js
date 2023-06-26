@@ -13,3 +13,11 @@ export const selectedProduct = (product) => {
         payload: product,
     }
 }
+
+export const removeselectedProduct = () => {
+    return{
+        type: ActionTypes.REMOVE_SELECTED_PRODUCT,
+    }
+}
+
+//the action type description is imported here and used to describe the individual action 

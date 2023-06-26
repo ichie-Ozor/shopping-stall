@@ -5,3 +5,5 @@ const store = createStore(reducer, {});
 
 
 export default store
+
+// this is the store and the reducers are imported here from the index.jx

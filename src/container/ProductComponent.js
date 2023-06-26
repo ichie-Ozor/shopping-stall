@@ -1,12 +1,14 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
 function ProductComponent() {
-    const products = useSelector((state) => state.allProducts.product)
-    const renderList = products.map((product) => {
+    const products = useSelector((state) => state.allProducts.product)   // this gets the info from the store and makes it available for the jsx
+    const renderList = products.map((product) => {                       //this splits the data into individual items called product
         const {id, title, image, price, category } = product
         return (
             <div className='column' key={id}>
+                <Link to ={`product/${id}`}>
                 <div className='cards'>
                   <div className='card'>
                       <div className='image'>
@@ -19,12 +21,13 @@ function ProductComponent() {
                       </div>
                   </div>
                 </div>
+                </Link>
               </div>
         )
     })
     
   return (
-    <>{renderList}</>
+    <>{renderList}</>                                                 //this is the jsx that is exported to ProductListing component 
   )
 }
 
